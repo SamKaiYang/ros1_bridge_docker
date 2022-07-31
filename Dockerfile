@@ -97,6 +97,15 @@ RUN apt install -y python3-colcon-common-extensions
 # else && \
 #   source /opt/ros/foxy/setup.bash && \
 # fi" >> ~/.bashrc 
+
+# RUN mkdir -p ~/colcon_ws/src
+# WORKDIR ~/colcon_ws/src
+# RUN git clone https://github.com/ros2/ros1_bridge
+# RUN colcon build --symlink-install --packages-skip ros1_bridge
+# RUN source /opt/ros/noetic/setup.bash
+# RUN source /ros2_foxy/ros2-linux/setup.bash
+# RUN colcon build --symlink-install --packages-select ros1_bridge --cmake-force-configure
+
 # 使用者新增
 RUN useradd -ms/bin/bash iclab && echo "iclab:iclab" | chpasswd && \
 adduser iclab sudo
